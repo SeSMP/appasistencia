@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component} from '@angular/core';
+import { Router } from '@angular/router';
 import { FormGroup, FormsModule,FormControl, ReactiveFormsModule, Validators, FormBuilder } from '@angular/forms';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonLabel, IonItem, IonInput, IonButton} from '@ionic/angular/standalone';
 import { emailDomainValidator } from '../components/validators/dominio-email-validator';
@@ -20,7 +21,7 @@ export class HomePage {
   submitted: boolean = false; // Propiedad para controlar si el botón iniciar sesion se está presionando
 
   //Ingresa el FormBuilder al constructor
-  constructor(private fb: FormBuilder){
+  constructor(private fb: FormBuilder, private router: Router){
     
   }
 
@@ -34,9 +35,10 @@ export class HomePage {
 
   // Método para manejar el envío del formulario
   submitForm() {
-    this.submitted = true; //Cambia el estado de submitted al presionar el botón
+    this.submitted = true;
     if (this.form.valid) {
-      console.log(this.form.value); // Imprime el valor del formulario
+      console.log(this.form.value);
+      this.router.navigate(['/escanerqr']); // Redirige a escanerqr
     } else {
       console.log('Formulario inválido');
     }
