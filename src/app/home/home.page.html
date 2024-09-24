@@ -1,20 +1,32 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="ion-padding ion-text-center">
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="logo">
+    <img class="lpad rpad" src="assets\img\resgistrapp.png">
   </div>
+  
+  <!--Formulario inicio de sesión-->
+  <div class="form flex ion-padding" [formGroup]="form">
+    <ion-item lines="none">
+      <ion-input formControlName="email" placeholder="Ingresa tu correo institucional" required ></ion-input>
+    </ion-item>
+
+    <!-- Mensaje de error para el email -->
+    <div class="msgError" *ngIf="submitted && emailControl.invalid">
+      <p *ngIf="form.get('email')?.hasError('required')">El correo es obligatorio.</p>
+      <p *ngIf="emailControl.hasError('domainInvalid')">Ingresa un correo institucional valido</p>
+    </div>
+
+
+    <ion-item lines="none">
+      <ion-input formControlName="password" placeholder="Ingresa tu contraseña" type="password"></ion-input>
+    </ion-item>
+
+    <!-- Mensaje de error para la contraseña -->
+    <div class="msgError" *ngIf="submitted && passwordControl.invalid">
+      <p *ngIf="passwordControl.hasError('required')">La contraseña es obligatoria.</p>
+    </div>
+
+    <ion-button color="dark" expand="block" (click)="submitForm()">Iniciar Sesión</ion-button>
+  </div>
+  <ion-button fill="clear">Olvidé mi contraseña</ion-button>
 </ion-content>

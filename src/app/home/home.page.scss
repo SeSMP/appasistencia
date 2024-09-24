@@ -25,3 +25,31 @@
 #container a {
   text-decoration: none;
 }
+
+.logo{
+  margin-top: 40%;
+  margin-left: 5%;
+  height: 190px;
+  width: 92%;
+}
+
+.form{
+  margin-top: -20px;
+
+  ion-item{
+    border-radius: 5px;
+    border-color: grey;
+    border-width: 2px;
+    border-style: solid;
+    margin-bottom: 10px;
+  }
+}
+
+ion-button{
+  text-transform: none;
+}
+
+.msgError{
+  color: red;
+  text-align: justify;
+}

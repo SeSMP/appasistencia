@@ -4,13 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 
 @Component({
-  selector: 'app-iniciosesion',
-  templateUrl: './iniciosesion.page.html',
-  styleUrls: ['./iniciosesion.page.scss'],
+  selector: 'app-escanerqr',
+  templateUrl: './escanerqr.page.html',
+  styleUrls: ['./escanerqr.page.scss'],
   standalone: true,
   imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
 })
-export class IniciosesionPage implements OnInit {
+export class EscanerqrPage implements OnInit {
 
   constructor() { }
 
